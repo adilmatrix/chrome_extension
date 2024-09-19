@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Property Data Scraper",
+  "version": "1.0",
+  "description": "Scrapes property data like Sold Price and Sold Date.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "webRequest",
+    "webRequestBlocking"
+  ],
+  "host_permissions": ["https://www.crexi.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.crexi.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
