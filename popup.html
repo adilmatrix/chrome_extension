@@ -39,10 +39,27 @@
       .scrape-section button:hover {
         background-color: #218838;
       }
+      .hidden {
+        display: none;
+      }
     </style>
   </head>
   <body>
-    <div class="scrape-section">
+    <div id="login-section" class="scrape-section login-section">
+      <h2>Login</h2>
+      <input type="text" id="username" placeholder="Username" />
+      <input type="password" id="password" placeholder="Password" />
+      <button id="login-btn">Login</button>
+      <p id="error-msg" style="color: red; display: none">
+        Invalid credentials, please try again.
+      </p>
+    </div>
+    <div id="welcome-section" class="scrape-section hidden">
+      <h2>Welcome!</h2>
+      <button id="vacant-rate">Vacant Rate</button>
+      <button id="comp-rate">Comp Rate</button>
+    </div>
+    <div class="scrape-section hidden">
       <button id="scrape">Scrape Property Data</button>
     </div>
     <script src="popup.js"></script>

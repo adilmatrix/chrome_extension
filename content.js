@@ -1,4 +1,3 @@
-
 function extractPropertyAndAddress() {
   let propertyDetails = {};
 
@@ -26,16 +25,13 @@ function extractPropertyAndAddress() {
     .find((div) => div.innerText.includes("Year Built"))
     ?.querySelector("span[data-cy='value']");
 
-
   const items = document.querySelectorAll("div.item");
 
   items.forEach((item) => {
     const label = item.querySelector("div.key");
 
     if (label && label.textContent === " Asking Price ") {
-      const askingPriceElement = item.querySelector(
-        "span.cui-tooltip-target"
-      );
+      const askingPriceElement = item.querySelector("span.cui-tooltip-target");
       if (askingPriceElement) {
         propertyDetails["Asking Price"] = askingPriceElement.textContent.trim();
       }
@@ -45,13 +41,12 @@ function extractPropertyAndAddress() {
         "span.cui-tooltip-target"
       );
       if (askingCapRateElement) {
-        propertyDetails["Asking Cap Rate"] = askingCapRateElement.textContent.trim();
+        propertyDetails["Asking Cap Rate"] =
+          askingCapRateElement.textContent.trim();
       }
     }
     if (label && label.textContent === " Asking NOI ") {
-      const askingNOIElement = item.querySelector(
-        "span.cui-tooltip-target"
-      );
+      const askingNOIElement = item.querySelector("span.cui-tooltip-target");
       if (askingNOIElement) {
         propertyDetails["Asking NOI"] = askingNOIElement.textContent.trim();
       }
